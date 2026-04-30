@@ -27,7 +27,6 @@ Use the toolbar button to turn LightsOut on or off for the active tab.
 - `activeTab`: reads and updates the current tab when toggled.
 - `scripting`: injects the reader mode stylesheet.
 - `storage`: remembers whether LightsOut is enabled for a tab.
-- `<all_urls>`: allows the extension to run on regular `http` and `https` pages.
 
 ## Files
 
