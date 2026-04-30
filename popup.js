@@ -9,6 +9,14 @@ function isSupportedTab(tab) {
   return tab?.id && /^https?:\/\//.test(tab.url ?? "");
 }
 
+function getOrigin(url) {
+  try {
+    return new URL(url).origin;
+  } catch {
+    return null;
+  }
+}
+
 async function sendToggle(tabId, enabled) {
   try {
     await chrome.tabs.sendMessage(tabId, { type: "LIGHTS_OUT_READER_SET", enabled });
@@ -26,7 +34,14 @@ async function init() {
     return;
   }
 
-  const key = `tab:${tab.id}:enabled`;
+  const origin = getOrigin(tab.url);
+
+  if (!origin) {
+    toggle.disabled = true;
+    return;
+  }
+
+  const key = `tab:${tab.id}:origin:${origin}:enabled`;
   const stored = await chrome.storage.session.get(key);
   const enabled = Boolean(stored[key]);
 

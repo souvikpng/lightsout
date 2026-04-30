@@ -1,4 +1,7 @@
 (() => {
+  if (window.__lightsOutReaderLoaded) return;
+  window.__lightsOutReaderLoaded = true;
+
   const id = "lights-out-reader-style";
 
   const css = `
