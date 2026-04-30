@@ -15,7 +15,7 @@ A small Chrome/Chromium Manifest V3 extension that toggles dark reader mode on t
 
 1. Download the repository as a ZIP from GitHub.
 2. Extract `lightsout-main.zip`; it should unpack to a folder named `lightsout-main`.
-3. Open `chrome://extensions` or `edge://extensions`.
+3. Open `chrome://extensions` or `[browser name]://extensions`.
 4. Enable **Developer mode**.
 5. Click **Load unpacked**.
 6. Select the extracted `lightsout-main` folder.
