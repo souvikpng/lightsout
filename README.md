@@ -32,3 +32,10 @@ Use the toolbar button to turn LightsOut on or off for the active tab.
 - `background.js`: reapplies LightsOut after tab refreshes.
 - `reader.js`: injected page styling.
 - `icon.svg`, `icons/`: source and generated extension icons.
+
+## Tested On:
+
+- Old Reddit
+- Mediafire
+
+If there's a site out there that doesn't play well with the extension reach out to me and I'll add support for it
