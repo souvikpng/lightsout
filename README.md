@@ -6,8 +6,8 @@ A small Chrome/Chromium Manifest V3 extension that toggles dark reader mode on t
 
 ## Features
 
-- Toggle per tab from the extension popup.
-- Keeps the enabled state after refreshing a tab.
+- Toggle per website from the extension popup.
+- Keeps the enabled state across pages on the same website.
 - Uses Manifest V3.
 - Includes a self-authored bulb icon.
 
@@ -25,8 +25,9 @@ Use the toolbar button to turn LightsOut on or off for the active tab.
 ## Permissions
 
 - `activeTab`: reads and updates the current tab when toggled.
+- `host_permissions`: reapplies LightsOut on enabled websites as pages load.
 - `scripting`: injects the reader mode stylesheet.
-- `storage`: remembers whether LightsOut is enabled for a tab.
+- `storage`: remembers whether LightsOut is enabled for a website.
 
 ## Files
 

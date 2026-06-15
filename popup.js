@@ -41,8 +41,8 @@ async function init() {
     return;
   }
 
-  const key = `tab:${tab.id}:origin:${origin}:enabled`;
-  const stored = await chrome.storage.session.get(key);
+  const key = `origin:${origin}:enabled`;
+  const stored = await chrome.storage.local.get(key);
   const enabled = Boolean(stored[key]);
 
   toggle.checked = enabled;
@@ -53,7 +53,7 @@ async function init() {
 
   toggle.addEventListener("change", async () => {
     const nextEnabled = toggle.checked;
-    await chrome.storage.session.set({ [key]: nextEnabled });
+    await chrome.storage.local.set({ [key]: nextEnabled });
     await sendToggle(tab.id, nextEnabled);
   });
 }

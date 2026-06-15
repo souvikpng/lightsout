@@ -26,11 +26,11 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
     return;
   }
 
-  const key = `tab:${tabId}:origin:${origin}:enabled`;
+  const key = `origin:${origin}:enabled`;
   let stored;
 
   try {
-    stored = await chrome.storage.session.get(key);
+    stored = await chrome.storage.local.get(key);
   } catch (error) {
     console.warn("LightsOut could not read tab state.", error);
     return;
